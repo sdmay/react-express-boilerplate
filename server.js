@@ -12,7 +12,7 @@ var Click = require("./models/click");
 // Create a new express app
 var app = express();
 // Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 4224;
+var PORT = process.env.PORT || 4228;
 
 // Run Morgan for Logging
 app.use(logger("dev"));
@@ -66,30 +66,30 @@ app.get('/api/clicker', async (req, res) => {
 });
 // This is the route we will send POST requests to save each click.
 // We will call this route the moment the "click" or "reset" button is pressed.
-app.post("/api", function(req, res) {
+// app.post("/api", function(req, res) {
 
-  var clickID = req.body.clickID;
-  var clicks = parseInt(req.body.clicks);
+//   var clickID = req.body.clickID;
+//   var clicks = parseInt(req.body.clicks);
 
   // Note how this route utilizes the findOneAndUpdate function to update the clickCount
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
-  Click.findOneAndUpdate({
-    clickID: clickID
-  }, {
-    $set: {
-      clicks: clicks
-    }
-  }, { upsert: true }).exec(function(err) {
+  // Click.findOneAndUpdate({
+  //   clickID: clickID
+  // }, {
+  //   $set: {
+  //     clicks: clicks
+  //   }
+  // }, { upsert: true }).exec(function(err) {
 
-    if (err) {
-      console.log(err);
-    }
-    else {
-      res.send("Updated Click Count!");
-    }
-  });
-});
+  //   if (err) {
+  //     console.log(err);
+  //   }
+  //   else {
+  //     res.send("Updated Click Count!");
+  //   }
+  // });
+// });
 
 // -------------------------------------------------
 

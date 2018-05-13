@@ -64,10 +64,10 @@ var Parent = React.createClass({
     if (prevState.clicks !== this.state.clicks) {
 
       // If it does, then update the clickcount in MongoDB
-      helpers.saveClicks({ clickID: this.state.clickID, clicks: this.state.clicks })
-        .then(function() {
-          console.log("Posted to MongoDB");
-        });
+      // helpers.saveClicks({ clickID: this.state.clickID, clicks: this.state.clicks })
+      //   .then(function() {
+      //     console.log("Posted to MongoDB");
+      //   });
     }
   },
   // Whenever the button is clicked we'll use setState to add to the clickCounter
@@ -86,7 +86,7 @@ var Parent = React.createClass({
   render: function() {
     return (
       <div className="container">
-
+      Testing the function
         <div className="row"> 
         {this.state.data.map((d, i) => {
                             return (
