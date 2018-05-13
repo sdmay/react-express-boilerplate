@@ -1,14 +1,14 @@
 // Include React
-var React = require("react");
+const React = require("react");
 
 // Here we include all of the sub-components
-var Child = require("./Child");
+const Child = require("./Child");
 
 // Requiring our helper for making API calls
-var helpers = require("../utils/helpers");
+const helpers = require("../utils/helpers");
 const resArray = []
 // Create the Parent Component
-var Parent = React.createClass({
+const Parent = React.createClass({
 
   // Here we set a generic state associated with the number of clicks
   getInitialState: function() {
@@ -48,7 +48,7 @@ var Parent = React.createClass({
       .then(function(response) {
         // Using a ternary operator we can set newClicks to the number of clicks in our response object
         // If we don't have any clicks in our database, set newClicks to 0
-        var newClicks = response.data.length ? response.data[0].clicks : 0;
+        const newClicks = response.data.length ? response.data[0].clicks : 0;
         this.setState({
           clicks: newClicks
         });

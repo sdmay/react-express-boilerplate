@@ -1,8 +1,8 @@
 // Include React
-var React = require("react");
+const React = require("react");
 
 // Create the GrandChild Component
-var GrandChild = React.createClass({
+const GrandChild = React.createClass({
 
   // GrandChild has a state that follows the number of clicks
   getInitialState: function() {

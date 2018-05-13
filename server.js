@@ -1,18 +1,18 @@
 // Include Server Dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
-var mongoose = require("mongoose");
+const express = require("express");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 const axios = require('axios');
 
 
 // Require Click schema
-var Click = require("./models/click");
+const Click = require("./models/click");
 
 // Create a new express app
-var app = express();
+const app = express();
 // Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 4228;
+const PORT = process.env.PORT || 4229;
 
 // Run Morgan for Logging
 app.use(logger("dev"));
@@ -27,7 +27,7 @@ app.use(express.static("./public"));
 
 // MongoDB configuration (Change this URL to your own DB)
 mongoose.connect("mongodb://admin:codingrocks@ds023674.mlab.com:23674/heroku_5ql1blnl");
-var db = mongoose.connection;
+const db = mongoose.connection;
 
 db.on("error", function(err) {
   console.log("Mongoose Error: ", err);
@@ -68,8 +68,8 @@ app.get('/api/clicker', async (req, res) => {
 // We will call this route the moment the "click" or "reset" button is pressed.
 // app.post("/api", function(req, res) {
 
-//   var clickID = req.body.clickID;
-//   var clicks = parseInt(req.body.clicks);
+//   const clickID = req.body.clickID;
+//   const clicks = parseInt(req.body.clicks);
 
   // Note how this route utilizes the findOneAndUpdate function to update the clickCount
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method

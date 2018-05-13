@@ -1,11 +1,11 @@
 // Include React
-var React = require("react");
+const React = require("react");
 
 // Here we include all of the sub-components
-var GrandChild = require("./GrandChild");
+const GrandChild = require("./GrandChild");
 
 // Create the Child Component
-var Child = React.createClass({
+const Child = React.createClass({
 
   // Child has a state that follows the number of clicks
   getInitialState: function() {
@@ -22,7 +22,7 @@ var Child = React.createClass({
         <div className="panel-body text-center">
 
           {/*
-            This component recieves a clicks variable as a prop from it's parent.
+            This component recieves a clicks constiable as a prop from it's parent.
             See line 64 of Parent.jsx
           */}
           <h1>{this.state.number + 2 * this.props.clicks}</h1>
